@@ -11,7 +11,7 @@ WORKDIR /src
 # نسخ ملفات الـ csproj لكل الطبقات لعمل Restore
 COPY ["E-CommerceCorevera.Api/E-CommerceCorevera.Api.csproj", "E-CommerceCorevera.Api/"]
 COPY ["Domain/Domain.csproj", "Domain/"]
-COPY ["Persistence/Persistence.csproj", "Persistence/"]
+COPY ["Presistence/Persistence.csproj", "Persistence/"]
 COPY ["Presentation/Presentation.csproj", "Presentation/"]
 COPY ["ServicesAbstraction/ServicesAbstraction.csproj", "ServicesAbstraction/"]
 COPY ["ServicesImplementation/ServicesImplementation.csproj", "ServicesImplementation/"]
