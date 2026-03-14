@@ -28,11 +28,11 @@ namespace ServicesAbstraction.MappingProfiles
     .ForMember(dest => dest.BrandName, options => options.MapFrom(src => src.ProductBrand.Name))
     .ForMember(dest => dest.TypeName, options => options.MapFrom(src => src.ProductType.Name))
 
-  .ForMember(dest => dest.PictureUrl, options => options.MapFrom(src =>
+.ForMember(dest => dest.PictureUrl, options => options.MapFrom(src =>
     string.IsNullOrEmpty(src.PictureUrl) ? null :
-    (src.PictureUrl.Contains("https://localhost:7122/")
-        ? $"http://localhost:8050/{src.PictureUrl.Replace("https://localhost:7122/", "")}"
-        : $"http://localhost:8050/{src.PictureUrl}")));
+    (src.PictureUrl.StartsWith("http")
+        ? src.PictureUrl 
+        : $"https://talabat-nahla-api.runasp.net/{src.PictureUrl.TrimStart('/')}")));
 
 
 
